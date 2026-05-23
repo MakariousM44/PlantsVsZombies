@@ -1,51 +1,74 @@
-[gd_scene format=3 uid="uid://embuccfoby3y"]
+[gd_scene format=3 uid="uid://ca1x73yo7wlvc"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_afprr"]
-color = Color(0.28028756, 0.5911854, 0.35255468, 1)
+[ext_resource type="Script" uid="uid://b1qboxc6rc1wp" path="res://scenes/lobby/Lobby.gd" id="1_sj1j4"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sj1j4"]
+color = Color(0.77788234, 0.46679688, 0.58853024, 1)
 thickness = 3
 
-[node name="Lobby" type="Control" unique_id=1734930242]
+[node name="Lobby" type="Control" unique_id=1801778200]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sj1j4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1587116210]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1410861105]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.505
-offset_top = -90.5
-offset_right = 166.56396
-offset_bottom = 90.5
+offset_left = -93.5
+offset_top = -77.5
+offset_right = 93.5
+offset_bottom = 77.5
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
 
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=1433511692]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1692518860]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "Choose Your Role"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=114753313]
 layout_mode = 2
 
-[node name="HostButton" type="Button" parent="VBoxContainer" unique_id=1017611353]
+[node name="PlantButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=677333186]
 layout_mode = 2
-text = "Host Game"
+toggle_mode = true
+text = "Plants 🌱"
 
-[node name="Separator" type="HSeparator" parent="VBoxContainer" unique_id=633609290]
-custom_minimum_size = Vector2(0, 30)
+[node name="ZombieButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=598055301]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_afprr")
+toggle_mode = true
+text = "Zombies 🧟"
 
-[node name="CodeInput" type="LineEdit" parent="VBoxContainer" unique_id=1138088680]
+[node name="RoleLabel" type="Label" parent="VBoxContainer" unique_id=976018236]
+custom_minimum_size = Vector2(0, 40.22)
 layout_mode = 2
-placeholder_text = "Enter Room Code"
+text = "No role selected"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="JoinButton" type="Button" parent="VBoxContainer" unique_id=1797390641]
+[node name="Separator" type="HSeparator" parent="VBoxContainer" unique_id=1059671576]
 layout_mode = 2
-text = "Join Game"
+theme_override_constants/separation = 28
+theme_override_styles/separator = SubResource("StyleBoxLine_sj1j4")
 
-[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1202516750]
+[node name="ReadyButton" type="Button" parent="VBoxContainer" unique_id=1632671818]
 layout_mode = 2
+toggle_mode = true
+text = "Ready"
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=718101504]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlantButton" to="." method="_on_plant_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ZombieButton" to="." method="_on_zombie_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ReadyButton" to="." method="_on_ready_button_pressed"]
