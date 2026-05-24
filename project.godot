@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PlantsVsZombies"
-run/main_scene="uid://embuccfoby3y"
+run/main_scene="uid://bkue348lxpiml"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,14 @@ config/icon="res://icon.svg"
 BoardStateManager="*uid://1mpuj0xws4wr"
 NetworkManager="*uid://lqwmjq5jsuve"
 ResourceManager="*uid://bfk56hd1hdict"
+
+[display]
+
+window/size/viewport_width=512
+window/size/viewport_height=264
+window/size/window_width_override=1024
+window/size/window_height_override=528
+window/stretch/mode="viewport"
 
 [physics]
 

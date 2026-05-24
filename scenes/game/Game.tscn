@@ -1,19 +1,45 @@
-[gd_scene format=3 uid="uid://bkue348lxpiml"]
+[gd_scene format=4 uid="uid://bkue348lxpiml"]
+
+[ext_resource type="Texture2D" uid="uid://b0ru2vfvelytl" path="res://assets/tiles/grass_tiles.png" id="1_klkup"]
+[ext_resource type="Script" uid="uid://vie1myoi4uni" path="res://scenes/game/GameManager.gd" id="2_m44fu"]
+[ext_resource type="Script" uid="uid://bmot85po7dqw8" path="res://scenes/game/InputHandler.gd" id="3_vrspl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m44fu"]
+texture = ExtResource("1_klkup")
+texture_region_size = Vector2i(32, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
+
+[sub_resource type="TileSet" id="TileSet_vrspl"]
+tile_size = Vector2i(32, 24)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_m44fu")
 
 [node name="Game" type="Node2D" unique_id=1747400761]
 
-[node name="Label" type="Label" parent="." unique_id=1602086273]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 409.0
-offset_top = 212.0
-offset_right = 915.0
-offset_bottom = 431.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "IT WORKS!!"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=299182124]
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAAEAAMAAAABAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAABAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAABAAAAAAALAAMAAAAAAAAAAAAMAAMAAAABAAAAAAACAAMAAAABAAAAAAAEAAQAAAACAAAAAAAEAAUAAAABAAAAAAAEAAYAAAACAAAAAAADAAYAAAADAAAAAAACAAYAAAACAAAAAAACAAcAAAABAAAAAAADAAcAAAAAAAAAAAAEAAcAAAABAAAAAAADAAgAAAADAAAAAAACAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAABAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAACAAAAAAAFAAYAAAADAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAABAAAAAAAGAAQAAAACAAAAAAAFAAQAAAADAAAAAAAHAAQAAAADAAAAAAAIAAQAAAACAAAAAAAIAAUAAAABAAAAAAAIAAYAAAACAAAAAAAHAAYAAAADAAAAAAAFAAgAAAADAAAAAAAGAAgAAAACAAAAAAAHAAgAAAADAAAAAAAIAAgAAAACAAAAAAAJAAgAAAADAAAAAAAKAAgAAAACAAAAAAAKAAcAAAABAAAAAAALAAcAAAAAAAAAAAAMAAcAAAABAAAAAAAMAAgAAAACAAAAAAALAAgAAAADAAAAAAALAAYAAAADAAAAAAALAAUAAAAAAAAAAAAMAAUAAAABAAAAAAAMAAQAAAACAAAAAAAMAAYAAAACAAAAAAALAAQAAAADAAAAAAAKAAQAAAACAAAAAAAKAAUAAAABAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAADAAAAAAAKAAYAAAACAAAAAAAJAAcAAAAAAAAAAAAIAAcAAAABAAAAAAAHAAUAAAAAAAAAAAAJAAQAAAADAAAAAAADAAUAAAAAAAAAAAACAAUAAAABAAAAAAADAAQAAAADAAAAAAACAAQAAAACAAAAAAAHAAkAAAADAAAAAAAHAAoAAAADAAAAAAAIAAIAAAADAAAAAAAIAAEAAAADAAAAAAAIAAAAAAADAAAAAAABAAYAAAADAAAAAAAAAAYAAAADAAAAAAAOAAYAAAADAAAAAAAPAAYAAAADAAAAAAANAAQAAAADAAAAAAANAAYAAAADAAAAAAANAAgAAAADAAAAAAANAAcAAAAAAAAAAAANAAUAAAAAAAAAAAANAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_vrspl")
+
+[node name="GameManager" type="Node" parent="." unique_id=1571134859]
+script = ExtResource("2_m44fu")
+
+[node name="InputHandler" type="Node" parent="." unique_id=431090071]
+script = ExtResource("3_vrspl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1397050780]
+anchor_mode = 0
+
+[node name="Highlight" type="ColorRect" parent="." unique_id=21458460]
+visible = false
+offset_right = 31.999992
+offset_bottom = 24.0
+color = Color(0.7921569, 0.7921569, 0.7921569, 0.4745098)

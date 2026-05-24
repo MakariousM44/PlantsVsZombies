@@ -53,6 +53,9 @@ func _on_ready_button_pressed() -> void:
 		return
 	local_ready = ready_button.button_pressed
 
+	if local_ready:
+		NetworkManager.register_role(multiplayer.get_unique_id(), local_role)
+
 	if not local_ready and countdown_active:
 		# Player unreadied during countdown
 		_cancel_countdown.rpc()

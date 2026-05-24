@@ -4,6 +4,7 @@ const PORT = 7777
 const MAX_PEERS = 2
 
 var peer: ENetMultiplayerPeer
+var player_roles: Dictionary = {}
 
 signal connected_to_host()
 signal guest_joined()
@@ -57,3 +58,11 @@ func _on_connection_failed() -> void:
 func _on_peer_connected(_id: int) -> void:
 	if multiplayer.is_server():
 		guest_joined.emit()
+
+func register_role(peer_id: int, role: String) -> void:
+	player_roles[peer_id] = role
+	_sync_role.rpc(peer_id, role)
+
+@rpc("any_peer", "call_remote", "reliable")
+func _sync_role(peer_id: int, role: String) -> void:
+	player_roles[peer_id] = role
