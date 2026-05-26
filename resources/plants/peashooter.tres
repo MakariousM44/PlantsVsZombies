@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://56elvm62h5l8"]
+
+[ext_resource type="Texture2D" uid="uid://raqem1m5qibs" path="res://assets/plants/peashooter.png" id="1_o0b0s"]
+[ext_resource type="Script" uid="uid://c660pk6ohvt05" path="res://scripts/PlantData.gd" id="2_jwk2v"]
+
+[resource]
+script = ExtResource("2_jwk2v")
+name = "peashooter"
+cost = 100
+icon = ExtResource("1_o0b0s")
+metadata/_custom_type_script = "uid://c660pk6ohvt05"

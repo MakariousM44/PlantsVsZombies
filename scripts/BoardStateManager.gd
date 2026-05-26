@@ -1,7 +1,7 @@
 extends Node
 
 # tile pixel size
-const TILE_SIZE = Vector2(32, 24)
+const TILE_SIZE = Vector2(32, 32)
 
 # world size
 const TOTAL_ROWS = 11

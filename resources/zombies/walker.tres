@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZombieData" format=3 uid="uid://dchoxcsn7po5c"]
+
+[ext_resource type="Texture2D" uid="uid://b5u83h7apu0vp" path="res://assets/zombies/walker.png" id="1_byt4p"]
+[ext_resource type="Script" uid="uid://b8klll2uokefp" path="res://scripts/ZombieData.gd" id="1_prg2f"]
+
+[resource]
+script = ExtResource("1_prg2f")
+name = "Walker"
+cost = 100
+icon = ExtResource("1_byt4p")
+metadata/_custom_type_script = "uid://b8klll2uokefp"

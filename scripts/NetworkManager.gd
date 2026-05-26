@@ -63,6 +63,6 @@ func register_role(peer_id: int, role: String) -> void:
 	player_roles[peer_id] = role
 	_sync_role.rpc(peer_id, role)
 
-@rpc("any_peer", "call_remote", "reliable")
+@rpc("authority", "call_remote", "reliable")
 func _sync_role(peer_id: int, role: String) -> void:
 	player_roles[peer_id] = role

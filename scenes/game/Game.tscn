@@ -1,33 +1,38 @@
 [gd_scene format=4 uid="uid://bkue348lxpiml"]
 
-[ext_resource type="Texture2D" uid="uid://b0ru2vfvelytl" path="res://assets/tiles/grass_tiles.png" id="1_klkup"]
+[ext_resource type="Texture2D" uid="uid://drytchxyc5x3d" path="res://assets/tiles/grass_tile.png" id="1_vrspl"]
+[ext_resource type="Texture2D" uid="uid://cig64it3bd88y" path="res://assets/tiles/grass2.png" id="2_7qcb4"]
 [ext_resource type="Script" uid="uid://vie1myoi4uni" path="res://scenes/game/GameManager.gd" id="2_m44fu"]
 [ext_resource type="Script" uid="uid://bmot85po7dqw8" path="res://scenes/game/InputHandler.gd" id="3_vrspl"]
+[ext_resource type="Script" uid="uid://cfy8p1r4ehyoy" path="res://scenes/game/SelectionManager.gd" id="5_lyhax"]
+[ext_resource type="Script" uid="uid://c660pk6ohvt05" path="res://scripts/PlantData.gd" id="6_qf6a8"]
+[ext_resource type="Resource" uid="uid://56elvm62h5l8" path="res://resources/plants/peashooter.tres" id="7_56wml"]
+[ext_resource type="Script" uid="uid://b8klll2uokefp" path="res://scripts/ZombieData.gd" id="8_aptqa"]
+[ext_resource type="Resource" uid="uid://dchoxcsn7po5c" path="res://resources/zombies/walker.tres" id="9_gynul"]
+[ext_resource type="Resource" uid="uid://cfrrt3vdetk7r" path="res://resources/zombies/juggernut.tres" id="10_56wml"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m44fu"]
-texture = ExtResource("1_klkup")
-texture_region_size = Vector2i(32, 24)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7qcb4"]
+texture = ExtResource("1_vrspl")
+texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, 12, -16, 12)
 
-[sub_resource type="TileSet" id="TileSet_vrspl"]
-tile_size = Vector2i(32, 24)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_m44fu")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyhax"]
+texture = ExtResource("2_7qcb4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lyhax"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_7qcb4")
+sources/1 = SubResource("TileSetAtlasSource_lyhax")
 
 [node name="Game" type="Node2D" unique_id=1747400761]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=299182124]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=639780603]
 y_sort_enabled = true
 texture_filter = 1
-tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAAEAAMAAAABAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAABAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAABAAAAAAALAAMAAAAAAAAAAAAMAAMAAAABAAAAAAACAAMAAAABAAAAAAAEAAQAAAACAAAAAAAEAAUAAAABAAAAAAAEAAYAAAACAAAAAAADAAYAAAADAAAAAAACAAYAAAACAAAAAAACAAcAAAABAAAAAAADAAcAAAAAAAAAAAAEAAcAAAABAAAAAAADAAgAAAADAAAAAAACAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAABAAAAAAAHAAcAAAAAAAAAAAAGAAYAAAACAAAAAAAFAAYAAAADAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAABAAAAAAAGAAQAAAACAAAAAAAFAAQAAAADAAAAAAAHAAQAAAADAAAAAAAIAAQAAAACAAAAAAAIAAUAAAABAAAAAAAIAAYAAAACAAAAAAAHAAYAAAADAAAAAAAFAAgAAAADAAAAAAAGAAgAAAACAAAAAAAHAAgAAAADAAAAAAAIAAgAAAACAAAAAAAJAAgAAAADAAAAAAAKAAgAAAACAAAAAAAKAAcAAAABAAAAAAALAAcAAAAAAAAAAAAMAAcAAAABAAAAAAAMAAgAAAACAAAAAAALAAgAAAADAAAAAAALAAYAAAADAAAAAAALAAUAAAAAAAAAAAAMAAUAAAABAAAAAAAMAAQAAAACAAAAAAAMAAYAAAACAAAAAAALAAQAAAADAAAAAAAKAAQAAAACAAAAAAAKAAUAAAABAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAADAAAAAAAKAAYAAAACAAAAAAAJAAcAAAAAAAAAAAAIAAcAAAABAAAAAAAHAAUAAAAAAAAAAAAJAAQAAAADAAAAAAADAAUAAAAAAAAAAAACAAUAAAABAAAAAAADAAQAAAADAAAAAAACAAQAAAACAAAAAAAHAAkAAAADAAAAAAAHAAoAAAADAAAAAAAIAAIAAAADAAAAAAAIAAEAAAADAAAAAAAIAAAAAAADAAAAAAABAAYAAAADAAAAAAAAAAYAAAADAAAAAAAOAAYAAAADAAAAAAAPAAYAAAADAAAAAAANAAQAAAADAAAAAAANAAYAAAADAAAAAAANAAgAAAADAAAAAAANAAcAAAAAAAAAAAANAAUAAAAAAAAAAAANAAMAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_vrspl")
+tile_map_data = PackedByteArray("AAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAACAAQAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAACAAYAAQAAAAAAAAADAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAACAAcAAQAAAAAAAAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAMAAQAAAAAAAAANAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAANAAUAAQAAAAAAAAAMAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lyhax")
 
 [node name="GameManager" type="Node" parent="." unique_id=1571134859]
 script = ExtResource("2_m44fu")
@@ -40,6 +45,51 @@ anchor_mode = 0
 
 [node name="Highlight" type="ColorRect" parent="." unique_id=21458460]
 visible = false
-offset_right = 31.999992
-offset_bottom = 24.0
+offset_right = 32.0
+offset_bottom = 32.0
 color = Color(0.7921569, 0.7921569, 0.7921569, 0.4745098)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=160962715]
+
+[node name="HandContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=760624131]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PeaShooter" type="Panel" parent="CanvasLayer/HandContainer" unique_id=872605943]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HandContainer/PeaShooter" unique_id=517741261]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/HandContainer/PeaShooter/VBoxContainer" unique_id=1946832444]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="CanvasLayer/HandContainer/PeaShooter/VBoxContainer" unique_id=1998334864]
+layout_mode = 2
+
+[node name="KeyLabel" type="Label" parent="CanvasLayer/HandContainer/PeaShooter/VBoxContainer" unique_id=1144375637]
+layout_mode = 2
+
+[node name="Sunflower" type="Panel" parent="CanvasLayer/HandContainer" unique_id=1034228173]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HandContainer/Sunflower" unique_id=823445865]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/HandContainer/Sunflower/VBoxContainer" unique_id=1663420776]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="CanvasLayer/HandContainer/Sunflower/VBoxContainer" unique_id=1775046936]
+layout_mode = 2
+
+[node name="KeyLabel" type="Label" parent="CanvasLayer/HandContainer/Sunflower/VBoxContainer" unique_id=1389754634]
+layout_mode = 2
+
+[node name="SelectionManager" type="Node" parent="CanvasLayer" unique_id=1789906154]
+script = ExtResource("5_lyhax")
+plant_cards = Array[ExtResource("6_qf6a8")]([ExtResource("7_56wml")])
+zombie_cards = Array[ExtResource("8_aptqa")]([ExtResource("9_gynul"), ExtResource("10_56wml")])

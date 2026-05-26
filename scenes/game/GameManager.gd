@@ -2,7 +2,7 @@ extends Node
 
 # FOR DEBUGGING REMOVE LATER
 @export var debug_mode: bool = true
-@export var debug_role: String = "plant"
+@export var debug_role: String = "zombie"
 
 var plant_player_id: int = -1
 var zombie_player_id: int = -1

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://gy3axejnyw7o"]
+
+[ext_resource type="Script" uid="uid://bimhn83qbn1o" path="res://scenes/game/Card.gd" id="1_dapqf"]
+
+[node name="Card" type="PanelContainer" unique_id=1198847857]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dapqf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1006198784]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" unique_id=98444803]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=183381870]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="VBoxContainer" unique_id=1141672235]
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

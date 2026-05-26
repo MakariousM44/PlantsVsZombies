@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ZombieData" format=3 uid="uid://cfrrt3vdetk7r"]
+
+[ext_resource type="Texture2D" uid="uid://b5u83h7apu0vp" path="res://assets/zombies/walker.png" id="1_8n2oa"]
+[ext_resource type="Script" uid="uid://b8klll2uokefp" path="res://scripts/ZombieData.gd" id="2_uuo2l"]
+
+[resource]
+script = ExtResource("2_uuo2l")
+name = "Juggernut"
+cost = 300
+icon = ExtResource("1_8n2oa")

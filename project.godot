@@ -24,9 +24,9 @@ ResourceManager="*uid://bfk56hd1hdict"
 [display]
 
 window/size/viewport_width=512
-window/size/viewport_height=264
+window/size/viewport_height=352
 window/size/window_width_override=1024
-window/size/window_height_override=528
+window/size/window_height_override=704
 window/stretch/mode="viewport"
 
 [physics]
