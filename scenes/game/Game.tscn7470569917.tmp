@@ -51,15 +51,6 @@ color = Color(0.7921569, 0.7921569, 0.7921569, 0.4745098)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=160962715]
 
-[node name="CursorControl" type="Control" parent="CanvasLayer" unique_id=317331081]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
 [node name="HandContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=760624131]
 offset_top = 8.0
 offset_right = 48.0

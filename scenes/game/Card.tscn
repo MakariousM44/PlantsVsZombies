@@ -1,26 +1,47 @@
 [gd_scene format=3 uid="uid://gy3axejnyw7o"]
 
 [ext_resource type="Script" uid="uid://bimhn83qbn1o" path="res://scenes/game/Card.gd" id="1_dapqf"]
+[ext_resource type="FontFile" uid="uid://cmws320ek7hqm" path="res://assets/fonts/PixelEmulator-xq08.ttf" id="2_l8p8g"]
 
 [node name="Card" type="PanelContainer" unique_id=1198847857]
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_dapqf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1006198784]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="IconContainer" type="Control" parent="VBoxContainer" unique_id=777234567]
+texture_filter = 1
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/IconContainer" unique_id=98444803]
+texture_filter = 1
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dapqf")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1006198784]
-layout_mode = 2
-
-[node name="Icon" type="TextureRect" parent="VBoxContainer" unique_id=98444803]
-layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
 stretch_mode = 5
 
-[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=183381870]
-layout_mode = 2
-
-[node name="CostLabel" type="Label" parent="VBoxContainer" unique_id=1141672235]
-layout_mode = 2
+[node name="CostLabel" type="Label" parent="VBoxContainer/IconContainer" unique_id=1141672235]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 3.0
+offset_top = 36.0
+offset_right = 27.0
+offset_bottom = 47.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_l8p8g")
+theme_override_font_sizes/font_size = 9
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

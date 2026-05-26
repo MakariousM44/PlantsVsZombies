@@ -40,12 +40,24 @@ func _update_visuals() -> void:
 			card.modulate = Color(1, 1, 1)
 
 func _unhandled_input(event: InputEvent) -> void:
+	# handle card selection using num keys
 	if event is InputEventKey and event.pressed:
 		var number_keys = [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6]
 		for i in number_keys.size():
 			if event.keycode == number_keys[i] and i < cards.size():
 				_on_card_selected(cards[i].unit_data)
 				break
+	
+	# remove the selected visual on clicking outside a playable zone
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			var role = NetworkManager.player_roles[multiplayer.get_unique_id()]
+			var cell = BoardStateManager.world_to_cell(get_viewport().get_mouse_position())
+			var in_zone = BoardStateManager.is_plant_zone(cell) if role == "plant" else BoardStateManager.is_zombie_zone(cell)
+
+			if not in_zone:
+				selected_card = null
+				_update_visuals()
 
 func get_selected() -> UnitData:
 	return selected_card
