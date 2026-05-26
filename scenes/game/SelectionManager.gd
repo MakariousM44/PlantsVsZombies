@@ -61,3 +61,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func get_selected() -> UnitData:
 	return selected_card
+
+func deselect() -> void:
+	selected_card = null
+	unit_selected.emit(null)
+	_update_visuals()

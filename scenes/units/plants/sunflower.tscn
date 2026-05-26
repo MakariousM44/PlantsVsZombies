@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://lpw7qac37guj"]
+
+[ext_resource type="Script" uid="uid://beorgkaro663p" path="res://scenes/units/plants/Plant.gd" id="1_plant"]
+[ext_resource type="SpriteFrames" uid="uid://dtih1nqlhao3r" path="res://assets/plants_animation/sunflower_animation.tres" id="2_jcgme"]
+
+[node name="Sunflower" type="Node2D" unique_id=1243020801]
+script = ExtResource("1_plant")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=602354567]
+texture_filter = 1
+offset = Vector2(0, -14)
+sprite_frames = ExtResource("2_jcgme")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cvbm4mepsakd2"]
+
+[ext_resource type="Script" uid="uid://beorgkaro663p" path="res://scenes/units/plants/Plant.gd" id="1_ijy16"]
+[ext_resource type="SpriteFrames" uid="uid://0wwbfk5o1hs" path="res://assets/plants_animation/peashooter_animation.tres" id="2_wpy36"]
+
+[node name="Plant" type="Node2D" unique_id=1940048915]
+script = ExtResource("1_ijy16")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=723732968]
+texture_filter = 1
+sprite_frames = ExtResource("2_wpy36")
+offset = Vector2(0, -14)

@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dj2xhsnqn6qnd" path="res://assets/plants_cards/peashooter_card.png" id="1_o0b0s"]
 [ext_resource type="Script" uid="uid://c660pk6ohvt05" path="res://scripts/PlantData.gd" id="2_jwk2v"]
+[ext_resource type="PackedScene" uid="uid://cvbm4mepsakd2" path="res://scenes/units/plants/peashooter.tscn" id="2_n78qv"]
 
 [resource]
 script = ExtResource("2_jwk2v")
 unit_name = "Peashooter"
 cost = 100
 icon = ExtResource("1_o0b0s")
+scene = ExtResource("2_n78qv")
 metadata/_custom_type_script = "uid://c660pk6ohvt05"

@@ -46,7 +46,17 @@ func _on_plant_cell_clicked(cell: Vector2i) -> void:
 		place_plant(cell)
 
 func place_plant(cell: Vector2i) -> void:
-	print("plant placed on %d %d" % [cell.y, cell.x])
+	var unit_data = selection_manager.get_selected()
+	if unit_data.scene == null:
+		push_error("No scene assigned for plant: " + unit_data.unit_name)
+		return
+
+	var plant = unit_data.scene.instantiate()
+	plant.position = BoardStateManager.cell_to_world(cell)
+	get_parent().add_child(plant)
+	BoardStateManager.grid[cell] = plant
+
+	_update_highlight(hovered_cell)
 
 # ──────── zombie functions ──────────
 
@@ -71,7 +81,7 @@ func _update_cursor(cell: Vector2i) -> void:
 	var role = NetworkManager.player_roles.get(multiplayer.get_unique_id(), "")
 	var card_selected = selection_manager.get_selected() != null
 	var in_zone = (role == "plant" and BoardStateManager.is_plant_zone(cell)) or (role == "zombie" and BoardStateManager.is_zombie_zone(cell))
-	
+
 	cursor_control.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND if card_selected and in_zone else Control.CURSOR_ARROW
 
 func _update_highlight(cell: Vector2i) -> void:

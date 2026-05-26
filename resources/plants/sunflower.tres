@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlantData" format=3 uid="uid://1v41epxhoikf"]
+
+[ext_resource type="Texture2D" uid="uid://b686e45g7u0xg" path="res://assets/plants_cards/sunflower_card.png" id="1_6ebgj"]
+[ext_resource type="Script" uid="uid://c660pk6ohvt05" path="res://scripts/PlantData.gd" id="1_kfpli"]
+[ext_resource type="PackedScene" uid="uid://lpw7qac37guj" path="res://scenes/units/plants/sunflower.tscn" id="2_j5xt1"]
+
+[resource]
+script = ExtResource("1_kfpli")
+unit_name = "Sunflower"
+cost = 150
+icon = ExtResource("1_6ebgj")
+scene = ExtResource("2_j5xt1")
+metadata/_custom_type_script = "uid://c660pk6ohvt05"

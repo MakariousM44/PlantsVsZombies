@@ -32,15 +32,14 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="CostLabel" type="Label" parent="VBoxContainer/IconContainer" unique_id=1141672235]
-mouse_filter = 2
 layout_mode = 0
 offset_left = 3.0
-offset_top = 36.0
+offset_top = 35.0
 offset_right = 27.0
 offset_bottom = 47.0
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_l8p8g")
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 

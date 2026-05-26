@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c660pk6ohvt05" path="res://scripts/PlantData.gd" id="6_qf6a8"]
 [ext_resource type="Resource" uid="uid://56elvm62h5l8" path="res://resources/plants/peashooter.tres" id="7_56wml"]
 [ext_resource type="Script" uid="uid://b8klll2uokefp" path="res://scripts/ZombieData.gd" id="8_aptqa"]
+[ext_resource type="Resource" uid="uid://1v41epxhoikf" path="res://resources/plants/sunflower.tres" id="8_gynul"]
 [ext_resource type="Resource" uid="uid://dchoxcsn7po5c" path="res://resources/zombies/walker.tres" id="9_gynul"]
 [ext_resource type="Resource" uid="uid://cfrrt3vdetk7r" path="res://resources/zombies/juggernut.tres" id="10_56wml"]
 
@@ -101,5 +102,5 @@ layout_mode = 2
 
 [node name="SelectionManager" type="Node" parent="CanvasLayer" unique_id=1789906154]
 script = ExtResource("5_lyhax")
-plant_cards = Array[ExtResource("6_qf6a8")]([ExtResource("7_56wml")])
+plant_cards = Array[ExtResource("6_qf6a8")]([ExtResource("7_56wml"), ExtResource("8_gynul")])
 zombie_cards = Array[ExtResource("8_aptqa")]([ExtResource("9_gynul"), ExtResource("10_56wml")])
